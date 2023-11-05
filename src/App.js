@@ -1,24 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import { list } from './Data/list';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <ul className='category'>
+        {list.map((category) => (
+          <li className='category-item'>{category.title}
+            <ul className='subcategory'>
+              {category.subcategory && category.subcategory.map((subcategoryItem) => (
+                <li className='subcategory-item'>
+                  {subcategoryItem.title}
+                  <ul className='items'>
+                    {subcategoryItem.items && subcategoryItem.items.map((item) => (
+                      <li className='items-item'>{item.title}</li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    </div >
   );
 }
 
