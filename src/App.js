@@ -7,7 +7,7 @@ function App() {
   const newCategoryInput = useRef(null);
 
   const handleAddCategory = () => {
-    const newCategoryTitle = newCategoryInput.current.value;
+    const newCategoryTitle = prompt('Enter the Category title:');
     if (newCategoryTitle) {
       const newCategory = {
         title: newCategoryTitle,
@@ -75,7 +75,6 @@ function App() {
         ))}
       </ul>
 
-      <input type="text" ref={newCategoryInput} />
       <button onClick={handleAddCategory}>+</button>
     </div>
   );

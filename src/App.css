@@ -36,3 +36,13 @@ li{
   margin:5px;
   background-color: white;
 }
+
+button{
+  background-color: #0284c7;
+  padding: 5px;
+  border-radius: 100rem;
+  border:none;
+  cursor: pointer;
+  margin:0 auto;
+  display: block;
+}
